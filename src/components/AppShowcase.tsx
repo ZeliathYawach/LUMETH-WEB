@@ -25,7 +25,7 @@ export function AppShowcase() {
             <p className="text-gray-400 mb-6">
               Find and book beauty services instantly. Get personalized recommendations and manage your appointments with ease.
             </p>
-            <AppStoreButtons variant="dark" className="mt-6" />
+            <AppStoreButtons variant="dark" appType="customer" className="mt-6" />
           </div>
 
           <div className="bg-purple-900/30 p-8 rounded-2xl border border-purple-500/20 hover:border-amber-400/50 transition-all duration-300">
@@ -34,7 +34,7 @@ export function AppShowcase() {
             <p className="text-gray-400 mb-6">
               Powerful tools for service providers to manage bookings, staff, and grow their business with data-driven insights.
             </p>
-            <AppStoreButtons variant="dark" className="mt-6" />
+            <AppStoreButtons variant="dark" appType="helm" className="mt-6" />
           </div>
 
           <div className="bg-purple-900/30 p-8 rounded-2xl border border-purple-500/20 hover:border-amber-400/50 transition-all duration-300">
@@ -43,7 +43,7 @@ export function AppShowcase() {
             <p className="text-gray-400 mb-6">
               Empower beauty professionals to manage schedules, connect with clients, and boost their career growth.
             </p>
-            <AppStoreButtons variant="dark" className="mt-6" />
+            <AppStoreButtons variant="dark" appType="tocca" className="mt-6" />
           </div>
         </div>
       </div>

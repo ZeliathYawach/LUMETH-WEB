@@ -3,15 +3,38 @@ import React from 'react';
 interface AppStoreButtonsProps {
   className?: string;
   variant?: 'light' | 'dark';
+  appType?: 'customer' | 'helm' | 'tocca';
 }
 
-export function AppStoreButtons({ className = '', variant = 'light' }: AppStoreButtonsProps) {
+export function AppStoreButtons({ className = '', variant = 'light', appType = 'customer' }: AppStoreButtonsProps) {
   const baseButtonClass = "transition-opacity hover:opacity-90";
+  
+  const getStoreLinks = () => {
+    switch (appType) {
+      case 'helm':
+        return {
+          appStore: 'https://apps.apple.com/app/id6736836133',
+          playStore: 'https://play.google.com/store/apps/details?id=com.Lumeth.Helm&pcampaignid=web_share'
+        };
+      case 'tocca':
+        return {
+          appStore: 'https://apps.apple.com/app/id6736836696',
+          playStore: 'https://play.google.com/store/apps/details?id=com.lumeth.worker&pcampaignid=web_share'
+        };
+      default: // customer
+        return {
+          appStore: 'https://apps.apple.com/app/id6737151440',
+          playStore: 'https://play.google.com/store/apps/details?id=com.Lumeth.Customer&pcampaignid=web_share'
+        };
+    }
+  };
+
+  const { appStore, playStore } = getStoreLinks();
   
   return (
     <div className={`flex flex-wrap gap-4 items-center ${className}`}>
       <a
-        href="#"
+        href={appStore}
         className={baseButtonClass}
         target="_blank"
         rel="noopener noreferrer"
@@ -23,7 +46,7 @@ export function AppStoreButtons({ className = '', variant = 'light' }: AppStoreB
         />
       </a>
       <a
-        href="#"
+        href={playStore}
         className={baseButtonClass}
         target="_blank"
         rel="noopener noreferrer"
