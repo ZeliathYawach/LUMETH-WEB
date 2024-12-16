@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles } from 'lucide-react';
 import { AppStoreButtons } from './ui/AppStoreButtons';
 
@@ -21,9 +22,12 @@ export function Hero() {
                 <Sparkles className="w-5 h-5 mr-2" />
                 Get Started
               </button>
-              <button className="border border-amber-400 text-amber-400 px-8 py-3 rounded-full hover:bg-amber-400/10 transition-colors">
+              <Link 
+                to="/business"
+                className="border border-amber-400 text-amber-400 px-8 py-3 rounded-full hover:bg-amber-400/10 transition-colors"
+              >
                 For Businesses
-              </button>
+              </Link>
             </div>
             <AppStoreButtons variant="dark" />
           </div>

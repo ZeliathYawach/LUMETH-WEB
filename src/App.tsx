@@ -18,6 +18,7 @@ import { CancellationPolicy } from './pages/CancellationPolicy';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { AboutUs } from './pages/AboutUs';
 import { Contact } from './pages/Contact';
+import { Business } from './pages/Business';
 
 function HomePage() {
   return (
@@ -56,6 +57,7 @@ function AppContent() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/business" element={<Business />} />
       </Routes>
     </AnimatePresence>
   );
