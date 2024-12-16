@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollToSection } from '../../hooks/useScrollToSection';
 
 interface LinkProps {
   href: string;
@@ -7,17 +8,11 @@ interface LinkProps {
 }
 
 export function Link({ href, children, className = '' }: LinkProps) {
+  const scrollToSection = useScrollToSection();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    scrollToSection(href);
   };
 
   return (

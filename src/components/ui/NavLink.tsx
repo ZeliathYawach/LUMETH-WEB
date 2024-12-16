@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useScrollToSection } from '../../hooks/useScrollToSection';
 
 interface NavLinkProps {
   to: string;
@@ -8,14 +9,11 @@ interface NavLinkProps {
 }
 
 export function NavLink({ to, children, className = '' }: NavLinkProps) {
+  const scrollToSection = useScrollToSection();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (to.startsWith('/#')) {
-      e.preventDefault();
-      const element = document.getElementById(to.substring(2));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
+    e.preventDefault();
+    scrollToSection(to);
   };
 
   return (
