@@ -19,6 +19,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { AboutUs } from './pages/AboutUs';
 import { Contact } from './pages/Contact';
 import { Business } from './pages/Business';
+import { GetStarted } from './pages/GetStarted';
 
 function HomePage() {
   return (
@@ -50,6 +51,7 @@ function AppContent() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/get-started" element={<GetStarted />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/create" element={<CreateBlog />} />
         <Route path="/terms" element={<TermsAndConditions />} />
